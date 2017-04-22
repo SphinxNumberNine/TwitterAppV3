@@ -26,7 +26,7 @@ class ViewController: UIViewController {
                 //self.label.text = unwrappedSession.userName
                 
                 let client = TWTRAPIClient()
-                let statusesShowEndpoint = "https://api.twitter.com/1.1/followers/list.json"
+                let statusesShowEndpoint = "https://api.twitter.com/1.1/lists/list.json"
                 let params = ["user_id": unwrappedSession.userID]
                 var clientError : NSError?
                 
@@ -36,7 +36,15 @@ class ViewController: UIViewController {
                     if connectionError != nil {
                         print("Error: \(connectionError)")
                     }
+                    
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                        print("json: \(json)")
+                    } catch let jsonError as NSError {
+                        print("json error: \(jsonError.localizedDescription)")
+                    }
                 }
+                
 
                 
             } else {

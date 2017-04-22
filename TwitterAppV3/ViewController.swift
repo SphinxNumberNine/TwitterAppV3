@@ -19,13 +19,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //var tableCount = 0
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
                 let alert = UIAlertController(title: "Logged In", message: "User \(unwrappedSession.userName) has logged in",preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 //self.label.text = unwrappedSession.userName
-                
                 let client = TWTRAPIClient()
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/lists/list.json"
                 let params = ["user_id": unwrappedSession.userID]
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 
                 client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
                     if connectionError != nil {
-                        print("Error: \(connectionError)")
+                        print("Error: \(String(describing: connectionError))")
                     }
                     
                     do {
@@ -65,7 +65,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }
 

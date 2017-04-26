@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/lists/list.json"
                 let params = ["user_id": unwrappedSession.userID]
                 var clientError : NSError?
-                
+                                
                 let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
                 
                 client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
@@ -61,6 +61,9 @@ class ViewController: UIViewController {
                         let s = self.getPublicOrPrivate()
                         
                         print("json: \(json)")
+                        
+                        self.performSegue(withIdentifier: "segueone", sender: self)
+                        
                     } catch let jsonError as NSError {
                         print("json error: \(jsonError.localizedDescription)")
                     }

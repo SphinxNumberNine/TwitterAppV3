@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46E93C9D1EB0CC8000F25E54 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E93C9C1EB0CC8000F25E54 /* ListsViewController.swift */; };
+		46E93C9F1EB15C8400F25E54 /* ListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E93C9E1EB15C8400F25E54 /* ListsTableViewCell.swift */; };
 		4F48AF6D1EAC07E9001CAF3C /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48AF6C1EAC07E9001CAF3C /* JsonParser.swift */; };
 		4FB262081EA7EB5E008F51F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB262071EA7EB5E008F51F5 /* AppDelegate.swift */; };
 		4FB2620A1EA7EB5E008F51F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB262091EA7EB5E008F51F5 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		46E93C9C1EB0CC8000F25E54 /* ListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		46E93C9E1EB15C8400F25E54 /* ListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewCell.swift; sourceTree = "<group>"; };
 		4F48AF6C1EAC07E9001CAF3C /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		4FB262041EA7EB5E008F51F5 /* TwitterAppV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterAppV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB262071EA7EB5E008F51F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				4FB262091EA7EB5E008F51F5 /* ViewController.swift */,
 				4F48AF6C1EAC07E9001CAF3C /* JsonParser.swift */,
 				4FB2620B1EA7EB5E008F51F5 /* Main.storyboard */,
+				46E93C9E1EB15C8400F25E54 /* ListsTableViewCell.swift */,
 				46E93C9C1EB0CC8000F25E54 /* ListsViewController.swift */,
 				4FB2620E1EA7EB5E008F51F5 /* Assets.xcassets */,
 				4FB262101EA7EB5E008F51F5 /* LaunchScreen.storyboard */,
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FB2620A1EA7EB5E008F51F5 /* ViewController.swift in Sources */,
+				46E93C9F1EB15C8400F25E54 /* ListsTableViewCell.swift in Sources */,
 				4FB262081EA7EB5E008F51F5 /* AppDelegate.swift in Sources */,
 				46E93C9D1EB0CC8000F25E54 /* ListsViewController.swift in Sources */,
 				4F48AF6D1EAC07E9001CAF3C /* JsonParser.swift in Sources */,

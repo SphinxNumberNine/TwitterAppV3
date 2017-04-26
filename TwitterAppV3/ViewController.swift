@@ -55,10 +55,14 @@ class ViewController: UIViewController {
                             self.numberOfMembers.append(y["member_count"]!)
                             self.publicOrPrivate.append(y["mode"]!)
                         }
-                        let p = self.getIds()
-                        let q = self.getNames()
-                        let r = self.getNumbersOfMembers()
-                        let s = self.getPublicOrPrivate()
+                        
+                        let parser = JsonParser(numberOfLists: self.numberOfLists, ids: self.ids, names: self.names, numberOfMembers: self.numberOfMembers, publicOrPrivate: self.publicOrPrivate)
+                        
+                        let p = parser.getIds()
+                        let q = parser.getNames()
+                        let r = parser.getNumberOfLists()
+                        let s = parser.getNumbersOfMembers()
+                        let t = parser.getPublicOrPrivate()
                         
                         print("json: \(json)")
                         
@@ -89,40 +93,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    public func getNumberOfLists() -> Int{
-        return self.numberOfLists
     }
-    
-    public func getIds() -> [String]{
-        var stringArray = [String]()
-        for i in self.ids{
-            stringArray.append(String(describing: i))
-        }
-        return stringArray
-    }
-    
-    public func getNames() -> [String]{
-        var stringArray = [String]()
-        for i in self.names{
-            stringArray.append(String(describing : i))
-        }
-        return stringArray
-    }
-    
-    public func getNumbersOfMembers() -> [String]{
-        var stringArray = [String]()
-        for i in self.numberOfMembers{
-            stringArray.append(String(describing: i))
-        }
-        return stringArray
-    }
-    
-    public func getPublicOrPrivate() -> [String]{
-        var stringArray = [String]()
-        for i in self.publicOrPrivate{
-            stringArray.append(String(describing: i))
-        }
-        return stringArray
-    }
-}
 

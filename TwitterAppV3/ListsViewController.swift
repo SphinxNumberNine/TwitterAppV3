@@ -16,7 +16,7 @@ class ListsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let numOfLists: Int = ViewController.getNumberOfLists(ViewController)
+        //let numOfLists: Int = ViewController.getNumberOfLists(ViewController)
         
         
     }

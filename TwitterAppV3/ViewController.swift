@@ -11,10 +11,16 @@
 
 import UIKit
 import TwitterKit
+import Foundation
 
 
 class ViewController: UIViewController {
     
+    var numberOfLists = 0
+    var ids = [AnyObject]()
+    var names = [AnyObject]()
+    var numberOfMembers = [AnyObject]()
+    var publicOrPrivate = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +44,22 @@ class ViewController: UIViewController {
                     }
                     
                     do {
-                        let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                        let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+                        let jsonarray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [[String: AnyObject]]
+                        for x in json{
+                            self.numberOfLists += 1
+                        }
+                        for y in jsonarray{
+                            self.ids.append(y["id"]!)
+                            self.names.append(y["name"]!)
+                            self.numberOfMembers.append(y["member_count"]!)
+                            self.publicOrPrivate.append(y["mode"]!)
+                        }
+                        let p = self.getIds()
+                        let q = self.getNames()
+                        let r = self.getNumbersOfMembers()
+                        let s = self.getPublicOrPrivate()
+                        
                         print("json: \(json)")
                     } catch let jsonError as NSError {
                         print("json error: \(jsonError.localizedDescription)")
@@ -65,5 +86,40 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    public func getNumberOfLists() -> Int{
+        return self.numberOfLists
+    }
+    
+    public func getIds() -> [String]{
+        var stringArray = [String]()
+        for i in self.ids{
+            stringArray.append(String(describing: i))
+        }
+        return stringArray
+    }
+    
+    public func getNames() -> [String]{
+        var stringArray = [String]()
+        for i in self.names{
+            stringArray.append(String(describing : i))
+        }
+        return stringArray
+    }
+    
+    public func getNumbersOfMembers() -> [String]{
+        var stringArray = [String]()
+        for i in self.numberOfMembers{
+            stringArray.append(String(describing: i))
+        }
+        return stringArray
+    }
+    
+    public func getPublicOrPrivate() -> [String]{
+        var stringArray = [String]()
+        for i in self.publicOrPrivate{
+            stringArray.append(String(describing: i))
+        }
+        return stringArray
+    }
 }
 

@@ -10,10 +10,12 @@ import UIKit
 
 class ListsTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var memberNumber: UILabel!
     @IBOutlet weak var pubOrPrivate: UILabel!
+  
+    
+  
     
     
     override func awakeFromNib() {

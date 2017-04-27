@@ -23,7 +23,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="NwZ-05-BE1" kind="show" identifier="segueone" id="mvD-QK-Pqw"/>
+                        <segue destination="NwZ-05-BE1" kind="show" identifier="segueone" id="kQA-1s-dXo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -46,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="123" id="xlm-U1-LAs" customClass="ListsTableViewCell" customModule="TwitterAppV3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listCell" rowHeight="123" id="xlm-U1-LAs" customClass="ListsTableViewCell" customModule="TwitterAppV3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xlm-U1-LAs" id="NaC-Sm-srL">
@@ -79,10 +79,19 @@
                                         <connections>
                                             <outlet property="ListName" destination="zQV-8n-npX" id="9zN-ox-CBZ"/>
                                             <outlet property="MemberNumber" destination="T7H-qd-yIu" id="CpJ-FX-3MT"/>
-                                            <outlet property="pubOrPrivate" destination="AbI-F3-8s4" id="arz-ay-fc8"/>
+                                            <outlet property="listName" destination="zQV-8n-npX" id="YSW-0O-6hV"/>
+                                            <outlet property="memberNumber" destination="T7H-qd-yIu" id="U4R-fm-38d"/>
+                                            <outlet property="name" destination="zQV-8n-npX" id="f9d-Cq-IWh"/>
+                                            <outlet property="numberOfLists" destination="T7H-qd-yIu" id="peL-Zi-GOo"/>
+                                            <outlet property="numberOfMembers" destination="T7H-qd-yIu" id="bND-r0-IEf"/>
+                                            <outlet property="pubOrPrivate" destination="AbI-F3-8s4" id="t7q-DK-Dwl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NwZ-05-BE1" id="pkg-X9-xea"/>
+                                    <outlet property="delegate" destination="NwZ-05-BE1" id="PqC-jE-FRS"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeB-O9-5o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="41"/>
+            <point key="canvasLocation" x="904.79999999999995" y="40.929535232383813"/>
         </scene>
     </scenes>
 </document>

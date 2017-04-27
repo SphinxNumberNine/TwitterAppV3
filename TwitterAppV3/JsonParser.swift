@@ -63,4 +63,37 @@ class JsonParser{
         return stringArray
     }
     
+    public func sendSecondRequest(id: String) -> Data?{
+        var data_real : Data?
+        let client = TWTRAPIClient()
+        let url = "https://api.twitter.com/1.1/lists/members.json"
+        let params = ["list_id": id]
+        var error : NSError?
+        
+        let request = client.urlRequest(withMethod: "GET", url: url, parameters: params, error: &error)
+        
+        client.sendTwitterRequest(request) { (response, data, error) in
+            if error != nil{
+                
+            }
+            else{
+                data_real = data
+            }
+        }
+        return data_real
+    }
+    
+    public func parseMembersData(data : Data){
+        
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: Any]
+            let membersarray = json?["users"] as? [String: Any]
+            
+        }
+        catch let jsonError as NSError{
+            print("json error: \(jsonError.localizedDescription)")
+        }
+    }
+    
 }
+

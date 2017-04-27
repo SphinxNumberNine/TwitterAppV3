@@ -13,6 +13,11 @@ import UIKit
 import TwitterKit
 import Foundation
 
+var globalIds = [String]()
+var globalNames = [String]()
+var globalNumberOfMembers = [String]()
+var globalPublicOrPrivate = [String]()
+var globalNumberOfLists = Int()
 
 class ViewController: UIViewController {
     
@@ -58,11 +63,11 @@ class ViewController: UIViewController {
                         
                         let parser = JsonParser(numberOfLists: self.numberOfLists, ids: self.ids, names: self.names, numberOfMembers: self.numberOfMembers, publicOrPrivate: self.publicOrPrivate)
                         
-                        let p = parser.getIds()
-                        let q = parser.getNames()
-                        let r = parser.getNumberOfLists()
-                        let s = parser.getNumbersOfMembers()
-                        let t = parser.getPublicOrPrivate()
+                        globalIds = parser.getIds()
+                        globalNames = parser.getNames()
+                        globalNumberOfMembers = parser.getNumbersOfMembers()
+                        globalPublicOrPrivate = parser.getPublicOrPrivate()
+                        globalNumberOfLists = parser.getNumberOfLists()
                         
                         print("json: \(json)")
                         

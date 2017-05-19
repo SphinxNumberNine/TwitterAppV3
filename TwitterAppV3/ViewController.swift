@@ -107,7 +107,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueone"{
-            let vc = segue.destination as! ListsTableViewController
+            let vc = segue.destination as! SearchViewController
             
             vc.listNames = globalNames
             vc.numberOfLists = globalNumberOfLists

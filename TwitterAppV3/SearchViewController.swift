@@ -35,7 +35,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         
-        cell.textLabel?.text = self.listNames[indexPath.row]
+        //cell.textLabel?.text = self.listNames[indexPath.row]
+        
+        cell.textLabel?.text = "FUCK"
         
         return cell
     }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		468659891ECE8B3500D2B74A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468659881ECE8B3500D2B74A /* SearchViewController.swift */; };
-		46D83EA01ECE75AB0091307F /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D83E9F1ECE75AB0091307F /* ListsTableViewController.swift */; };
 		4F48AF6D1EAC07E9001CAF3C /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48AF6C1EAC07E9001CAF3C /* JsonParser.swift */; };
 		4FB262081EA7EB5E008F51F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB262071EA7EB5E008F51F5 /* AppDelegate.swift */; };
 		4FB2620A1EA7EB5E008F51F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB262091EA7EB5E008F51F5 /* ViewController.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		468659881ECE8B3500D2B74A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		46D83E9F1ECE75AB0091307F /* ListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListsTableViewController.swift; path = ../ListsTableViewController.swift; sourceTree = "<group>"; };
 		4F48AF6C1EAC07E9001CAF3C /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		4FB262041EA7EB5E008F51F5 /* TwitterAppV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterAppV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB262071EA7EB5E008F51F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				4FB262091EA7EB5E008F51F5 /* ViewController.swift */,
 				4F48AF6C1EAC07E9001CAF3C /* JsonParser.swift */,
 				4FB2620B1EA7EB5E008F51F5 /* Main.storyboard */,
-				46D83E9F1ECE75AB0091307F /* ListsTableViewController.swift */,
 				468659881ECE8B3500D2B74A /* SearchViewController.swift */,
 				4FB2620E1EA7EB5E008F51F5 /* Assets.xcassets */,
 				4FB262101EA7EB5E008F51F5 /* LaunchScreen.storyboard */,
@@ -305,7 +302,6 @@
 				4FB2620A1EA7EB5E008F51F5 /* ViewController.swift in Sources */,
 				4FB262081EA7EB5E008F51F5 /* AppDelegate.swift in Sources */,
 				4F48AF6D1EAC07E9001CAF3C /* JsonParser.swift in Sources */,
-				46D83EA01ECE75AB0091307F /* ListsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

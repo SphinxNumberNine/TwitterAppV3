@@ -110,6 +110,9 @@ class ViewController: UIViewController {
             let vc = segue.destination as! ListsTableViewController
             
             vc.listNames = globalNames
+            vc.numberOfLists = globalNumberOfLists
+            vc.numberofMembers = globalNumberOfMembers
+            vc.publicOrPrivate = globalPublicOrPrivate
         }
     }
     

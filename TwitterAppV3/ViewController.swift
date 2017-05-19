@@ -32,15 +32,7 @@ class ViewController: UIViewController {
         //var tableCount = 0
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
-                /*let alert = UIAlertController(title: "Logged In", message: "User \(unwrappedSession.userName) has logged in",preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
-                    (result : UIAlertAction) -> Void in
-                    self.performSegue(withIdentifier: "segueone", sender: self)
-                }
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)*/
-                
-                
+               
                 let client = TWTRAPIClient()
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/lists/list.json"
                 let params = ["user_id": unwrappedSession.userID]
@@ -48,6 +40,7 @@ class ViewController: UIViewController {
                                 
                 let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
                 
+                //Sends reques to twitter to get lists of user that logged in, parses all the json
                 client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
                     if connectionError != nil {
                         print("Error: \(String(describing: connectionError))")
@@ -76,7 +69,7 @@ class ViewController: UIViewController {
                         
                         print("json: \(json)")
                                                 
-                        //self.performSegue(withIdentifier: "segueone", sender: self)
+                        //Alert saying login is successful and segues when "ok" is pushed
                         let alert = UIAlertController(title: "Logged In", message: "User \(unwrappedSession.userName) has logged in",preferredStyle: UIAlertControllerStyle.alert)
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
                             (result : UIAlertAction) -> Void in

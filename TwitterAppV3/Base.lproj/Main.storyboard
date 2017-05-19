@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9ga-n9-MHc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,17 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wAj-ai-S0Z"/>
                     <connections>
-                        <segue destination="NwZ-05-BE1" kind="show" identifier="segueone" id="kQA-1s-dXo"/>
+                        <segue destination="NwZ-05-BE1" kind="show" identifier="segueone" id="5wN-Lr-Goz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1062" y="41"/>
         </scene>
-        <!--Lists View Controller-->
+        <!--Lists Table View Controller-->
         <scene sceneID="m5R-9K-osW">
             <objects>
-                <viewController id="NwZ-05-BE1" customClass="ListsViewController" customModule="TwitterAppV3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NwZ-05-BE1" userLabel="Lists Table View Controller" customClass="ListsTableViewController" customModule="TwitterAppV3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xkx-12-W3V"/>
                         <viewControllerLayoutGuide type="bottom" id="Kce-gY-IPR"/>
@@ -41,68 +43,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SR3-1x-nPW">
-                                <rect key="frame" x="16" y="20" width="343" height="639"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ah5-Qd-X4Q">
+                                <rect key="frame" x="0.0" y="57" width="375" height="610"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listCell" rowHeight="123" id="xlm-U1-LAs" customClass="ListsTableViewCell" customModule="TwitterAppV3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="123"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xlm-U1-LAs" id="NaC-Sm-srL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="122.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQV-8n-npX">
-                                                    <rect key="frame" x="8" y="8" width="45" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Public Or Private" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-F3-8s4">
-                                                    <rect key="frame" x="8" y="93" width="128" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number Of Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7H-qd-yIu">
-                                                    <rect key="frame" x="8" y="51" width="161" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="ListName" destination="zQV-8n-npX" id="9zN-ox-CBZ"/>
-                                            <outlet property="MemberNumber" destination="T7H-qd-yIu" id="CpJ-FX-3MT"/>
-                                            <outlet property="listName" destination="zQV-8n-npX" id="YSW-0O-6hV"/>
-                                            <outlet property="memberNumber" destination="T7H-qd-yIu" id="U4R-fm-38d"/>
-                                            <outlet property="name" destination="zQV-8n-npX" id="f9d-Cq-IWh"/>
-                                            <outlet property="numberOfLists" destination="T7H-qd-yIu" id="peL-Zi-GOo"/>
-                                            <outlet property="numberOfMembers" destination="T7H-qd-yIu" id="bND-r0-IEf"/>
-                                            <outlet property="pubOrPrivate" destination="AbI-F3-8s4" id="t7q-DK-Dwl"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="NwZ-05-BE1" id="pkg-X9-xea"/>
-                                    <outlet property="delegate" destination="NwZ-05-BE1" id="PqC-jE-FRS"/>
+                                    <outlet property="dataSource" destination="NwZ-05-BE1" id="64F-Yr-Ply"/>
+                                    <outlet property="delegate" destination="NwZ-05-BE1" id="qz4-db-NOD"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="listsTable" destination="SR3-1x-nPW" id="Dvi-C4-1ge"/>
+                        <outlet property="listsTableView" destination="Ah5-Qd-X4Q" id="At1-KO-IGP"/>
+                        <outlet property="tableView" destination="Ah5-Qd-X4Q" id="U0j-hy-sgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeB-O9-5o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.79999999999995" y="40.929535232383813"/>
+            <point key="canvasLocation" x="2161" y="41"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eQh-2I-cTU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ga-n9-MHc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J08-Bi-NGi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aiv-0E-E4h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wax-vP-rkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="40.929535232383813"/>
         </scene>
     </scenes>
 </document>

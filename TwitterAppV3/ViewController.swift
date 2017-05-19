@@ -32,10 +32,15 @@ class ViewController: UIViewController {
         //var tableCount = 0
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
-                let alert = UIAlertController(title: "Logged In", message: "User \(unwrappedSession.userName) has logged in",preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                //self.label.text = unwrappedSession.userName
+                /*let alert = UIAlertController(title: "Logged In", message: "User \(unwrappedSession.userName) has logged in",preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
+                    (result : UIAlertAction) -> Void in
+                    self.performSegue(withIdentifier: "segueone", sender: self)
+                }
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)*/
+                
+                
                 let client = TWTRAPIClient()
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/lists/list.json"
                 let params = ["user_id": unwrappedSession.userID]
@@ -70,8 +75,15 @@ class ViewController: UIViewController {
                         globalNumberOfLists = parser.getNumberOfLists()
                         
                         print("json: \(json)")
-                        
-                        self.performSegue(withIdentifier: "segueone", sender: self)
+                                                
+                        //self.performSegue(withIdentifier: "segueone", sender: self)
+                        let alert = UIAlertController(title: "Logged In", message: "User \(unwrappedSession.userName) has logged in",preferredStyle: UIAlertControllerStyle.alert)
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
+                            (result : UIAlertAction) -> Void in
+                            self.performSegue(withIdentifier: "segueone", sender: self)
+                        }
+                        alert.addAction(okAction)
+                        self.present(alert, animated: true, completion: nil)
                         
                     } catch let jsonError as NSError {
                         print("json error: \(jsonError.localizedDescription)")
@@ -91,6 +103,14 @@ class ViewController: UIViewController {
             self.view.addSubview(button)
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueone"{
+            let vc = segue.destination as! ListsTableViewController
+            
+            vc.listNames = globalNames
+        }
     }
     
     override func didReceiveMemoryWarning() {
